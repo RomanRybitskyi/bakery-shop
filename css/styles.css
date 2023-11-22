@@ -69,7 +69,7 @@ ul {
     list-style-type: none;
 }
 
-a{
+a {
     display: inline-block;
 }
 
@@ -102,6 +102,7 @@ a{
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    transition: background-color 1s, color 1s;
 }
 
 .button:hover {
@@ -113,6 +114,7 @@ a{
 .link {
     color: var(--color-primary-light);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .link:hover {
@@ -122,7 +124,11 @@ a{
 
 /* Header */
 .header {
-    background-color: blue; /* remove */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 32px;
 }
 
 .header-container {
@@ -148,7 +154,8 @@ a{
 /* Hero section */
 .hero-section {
     padding: 272px 0;
-    background-image: url("../images/hero-section-background.jpg");
+    background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.60) 58.46%, rgba(18, 18, 17, 0.00) 90.36%),
+    url("../images/hero-section-background.jpg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -233,15 +240,26 @@ a{
 
 /* Chefs section */
 .chefs-title {
-    max-width: 520px;
+    position: relative;
+    font-weight: 700;
     margin: 0 auto 80px;
 }
 
 .chefs-title::before, .chefs-title::after {
+    position: absolute;
+    bottom: 24px;
     display: block;
     width: 352px;
     border: 2px solid var(--color-brand-light);
     content: '';
+}
+
+.chefs-title::before {
+    left: 0;
+}
+
+.chefs-title::after {
+    right: 0;
 }
 
 .chefs-list {
@@ -270,10 +288,11 @@ a{
     margin-bottom: 16px;
 }
 
-.chef-text p{
+.chef-text p {
     margin-bottom: 24px;
 }
-.chef-text p:last-child{
+
+.chef-text p:last-child {
     margin-bottom: 0;
 }
 
@@ -300,6 +319,11 @@ a{
     border: 1px solid lightblue; /* test */
     border-radius: 16px;
     background-image: linear-gradient(180deg, rgba(49, 38, 26, 0.00) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%);
+    transition: transform 0.3s;
+}
+
+.format-card:hover {
+    transform: scale(1.05);
 }
 
 .formats-title {
@@ -339,6 +363,10 @@ a{
     fill: var(--color-primary-light);
 }
 
+.carousel-button.next {
+    transform: rotate(180deg);
+}
+
 /*Contacts section*/
 .contacts-section {
     padding-bottom: 96px;
@@ -360,9 +388,38 @@ a{
 }
 
 /* Footer */
-.footer{
+.footer {
     padding: 32px 0;
+    position: relative;
+    background-color: var(--color-primary-dark);
+    background-image: url("../images/footer-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
+.footer::before, .footer::after {
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 0;
+    content: "";
+}
+
+.footer::before {
+    width: 180px;
+    height: 120px;
+    left: 0;
+    background-image: url("/images/decor-bread-small.png");
+}
+
+.footer::after {
+    width: 380px;
+    height: 190px;
+    right: 0;
+    background-image: url("/images/decor-bread-large.png");
+
+}
+
 .footer-container {
     display: flex;
     gap: 20px;
@@ -378,9 +435,10 @@ a{
     flex-grow: 1;
 }
 
-.address-list, .address-info{
+.address-list, .address-info {
     flex-grow: 1;
 }
+
 .address-link {
     color: var(--color-primary-light);
     font-size: 16px;
@@ -404,10 +462,40 @@ a{
     font-size: 14px;
 }
 
-.footer {
-    background-color: var(--color-primary-dark);
-    background-image: url("../images/footer-background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+/* Modal */
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal {
+    position: relative;
+    max-height: 880px;
+    height: 100%;
+    max-width: 880px;
+    width: 100%;
+    background-color: var(--color-primary-light);
+    border-radius: 32px;
+}
+
+
+.modal-btn-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
 }
