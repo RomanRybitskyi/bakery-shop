@@ -317,7 +317,7 @@ a {
   padding: 32px 0;
   position: relative;
   background-color: var(--color-primary-dark);
-  background-image: url("../../images/footer-background.png");
+  background-image: url("../images/footer-background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -332,13 +332,13 @@ a {
   width: 180px;
   height: 120px;
   left: 0;
-  background-image: url("/genius/images/decor-bread-small.png");
+  background-image: url("../images/decor-bread-small.png");
 }
 .footer::after {
   width: 380px;
   height: 190px;
   right: 0;
-  background-image: url("/genius/images/decor-bread-large.png");
+  background-image: url("../images/decor-bread-large.png");
 }
 .footer__container {
   display: flex;
@@ -538,7 +538,7 @@ a {
 
 .hero-section {
   padding: 124px 0;
-  background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.6) 58.46%, rgba(18, 18, 17, 0) 90.36%), url("../../images/hero-section-background.jpg");
+  background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.6) 58.46%, rgba(18, 18, 17, 0) 90.36%), url("../images/hero-section-background.jpg");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -550,7 +550,7 @@ a {
 }
 @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero-section {
-    background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.6) 58.46%, rgba(18, 18, 17, 0) 90.36%), url("../../images/hero-section-background@2x.jpg");
+    background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.6) 58.46%, rgba(18, 18, 17, 0) 90.36%), url("../images/hero-section-background@2x.jpg");
   }
 }
 .hero-section__title {
